@@ -1,0 +1,163 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* JusticeLink India - Government Grade Design System */
+
+@layer base {
+  :root {
+    /* Core Government Colors - India Theme */
+    --background: 0 0% 98%;
+    --foreground: 240 10% 15%;
+    
+    /* Saffron Primary */
+    --primary: 27 100% 60%;
+    --primary-foreground: 0 0% 100%;
+    --primary-glow: 27 100% 70%;
+    
+    /* India Green Secondary */
+    --secondary: 142 71% 28%;
+    --secondary-foreground: 0 0% 100%;
+    
+    /* Navy Blue Accent */
+    --accent: 240 100% 25%;
+    --accent-foreground: 0 0% 100%;
+    
+    /* Card & Surface */
+    --card: 0 0% 100%;
+    --card-foreground: 240 10% 15%;
+    --card-border: 220 13% 91%;
+    
+    /* Popover */
+    --popover: 0 0% 100%;
+    --popover-foreground: 240 10% 15%;
+    
+    /* Muted */
+    --muted: 210 40% 96%;
+    --muted-foreground: 240 5% 45%;
+    
+    /* Status Colors */
+    --success: 142 76% 36%;
+    --success-foreground: 0 0% 100%;
+    
+    --warning: 38 92% 50%;
+    --warning-foreground: 0 0% 100%;
+    
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 100%;
+    
+    --info: 217 91% 60%;
+    --info-foreground: 0 0% 100%;
+    
+    /* Borders & Inputs */
+    --border: 220 13% 91%;
+    --input: 220 13% 91%;
+    --ring: 27 100% 60%;
+    
+    --radius: 0.5rem;
+    
+    /* Gradients */
+    --gradient-tricolor: linear-gradient(180deg, hsl(27 100% 60%) 0%, hsl(0 0% 100%) 33%, hsl(142 71% 28%) 66%, hsl(240 100% 25%) 100%);
+    --gradient-hero: linear-gradient(135deg, hsl(27 100% 60%) 0%, hsl(27 100% 70%) 100%);
+    --gradient-card: linear-gradient(180deg, hsl(0 0% 100%) 0%, hsl(210 40% 98%) 100%);
+    
+    /* Shadows */
+    --shadow-gov: 0 2px 8px hsl(240 10% 15% / 0.08);
+    --shadow-card: 0 4px 16px hsl(240 10% 15% / 0.12);
+    --shadow-elevated: 0 8px 24px hsl(240 10% 15% / 0.16);
+    
+    /* Sidebar */
+    --sidebar-background: 240 100% 25%;
+    --sidebar-foreground: 0 0% 100%;
+    --sidebar-primary: 27 100% 60%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 240 100% 30%;
+    --sidebar-accent-foreground: 0 0% 100%;
+    --sidebar-border: 240 100% 30%;
+    --sidebar-ring: 27 100% 60%;
+    
+    /* Animations */
+    --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    --transition-bounce: all 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  
+  body {
+    @apply bg-background text-foreground antialiased;
+    font-feature-settings: "cv11", "ss01";
+  }
+  
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-semibold tracking-tight;
+  }
+  
+  h1 {
+    @apply text-4xl lg:text-5xl;
+  }
+  
+  h2 {
+    @apply text-3xl lg:text-4xl;
+  }
+  
+  h3 {
+    @apply text-2xl lg:text-3xl;
+  }
+}
+
+@layer components {
+  /* Government Badge */
+  .gov-badge {
+    @apply inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-primary/10 text-primary font-medium;
+    border: 1px solid hsl(var(--primary) / 0.2);
+  }
+  
+  /* Status Badge Variants */
+  .status-pending {
+    @apply bg-warning/10 text-warning border-warning/20;
+  }
+  
+  .status-verified {
+    @apply bg-info/10 text-info border-info/20;
+  }
+  
+  .status-approved {
+    @apply bg-success/10 text-success border-success/20;
+  }
+  
+  .status-rejected {
+    @apply bg-destructive/10 text-destructive border-destructive/20;
+  }
+  
+  /* Government Card */
+  .gov-card {
+    @apply bg-card border border-card-border rounded-lg p-6;
+    box-shadow: var(--shadow-card);
+  }
+  
+  /* Hero Gradient */
+  .hero-gradient {
+    background: var(--gradient-hero);
+  }
+  
+  /* Tricolor Accent */
+  .tricolor-border {
+    border-left: 4px solid transparent;
+    border-image: var(--gradient-tricolor);
+    border-image-slice: 1;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+  }
+}
